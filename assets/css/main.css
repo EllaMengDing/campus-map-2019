@@ -109,6 +109,7 @@
 		font-weight: bold;
 		background-color: #eaaf0f;
 		border-color: #000000;
+		border-radius: 5px;
 	}
 	#walkingSelectionsSubmitButton:hover {
 		border-color: #eaaf0f;
