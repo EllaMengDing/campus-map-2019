@@ -1,0 +1,495 @@
+    /* --------------------Map css-------------------- */
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    
+    #map {
+        height: 100%;
+        z-index: 10;
+    }
+    /* Config------------------------------------------------ */
+    
+    html,
+    body {
+        font-size: 14px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: lightblue;
+    }
+    
+	img {
+		width: 15px;
+		height: 15px;
+	}
+	
+    a {
+        color: black;
+    }
+    
+    #sidebar-search a {
+        color: white;
+    }
+    
+	.sameLineStyle {
+		display: inline-block;
+	}
+	
+    .sidebar-content {
+        list-style-type: none;
+        margin: 0px 20px 0px 20px;
+        padding: 0px;
+    }
+    
+    .sidebarOption {
+        /*
+		font-weight: bold;
+		*/
+        border-style: solid;
+        border-width: 1px;
+        border-color: #000000;
+    }
+    
+    .sidebarOption:hover {
+        background-color: #000000;
+        color: #eaaf0f;
+        cursor: pointer;
+        border-color: #eaaf0f;
+    }
+    
+	.active {
+		background-color: #eaaf0f;
+		color: #000000;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #000000;
+	}
+	/*
+	li.active:hover {
+		background-color: #eaaf0f;
+		color: #000000;
+		border-color: #000000;	
+	}
+	*/
+	.resetButtons {
+		background-color: #000000;
+		margin: 0px 0px 0px 10px;
+		border: #000000 solid 1px;
+		padding: 1px 1px 10px 1px;
+		width: 30px;
+		height: 30px;
+	}
+	.resetButtons:hover {
+		border-color: #eaaf0f;
+		border-width: 1px;
+	}
+	
+	/*WALKING DIRECTIONS STYLES*/
+	#walkingSelectionsStartDropdownOption {
+	padding: 2px 0px 3px 0px;
+	margin: 3px 2px 3px 0px;
+	display: inline-block;
+	}
+	#walkingDirectionsStartInput {
+		width: 275px;
+	}
+	#walkingSelectionsEndDropdownOption {
+		padding: 2px 0px 3px 0px;
+		margin: 2px 2px 10px 0px;
+		display: inline-block;
+	}
+	#walkingDirectionsEndInput {
+		width: 275px;
+	}
+	#walkingSelectionsSubmitButton {
+		width: 160px;
+		height: 30px;
+		margin: 5px 30px 5px 30px;
+		padding-top: 7px;
+		font-size: 12px;
+		font-weight: bold;
+		background-color: #eaaf0f;
+		border-color: #000000;
+	}
+	#walkingSelectionsSubmitButton:hover {
+		border-color: #eaaf0f;
+		border-width: 2px;
+		color:#eaaf0f;
+		background-color: #000000;
+	}
+	#walkingTitleBar {
+		padding: 0px;
+	}
+	#walkingTitleText {
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	/*WALKING DIRECTIONS PANEL STYLING*/
+	#walkingDirectionsPanelTitleTextContainer {
+		margin-right: 110px;
+	}
+	#walkingDirectionsPanelTitleText {
+		margin: 10px 5px 2px 4px;
+		font-size: 19px;
+		font-weight: bold;
+		margin: 0px;
+		padding: 2px;
+		color: #eaaf0f;
+	}
+	#toggleWalkingDirectionsMarkerButton {
+		margin-left: 5px;
+		background-color: #000000;
+		border: #000000 solid 1px;
+		padding: 0px 2px 0px 2px;
+	}
+	#toggleWalkingDirectionsMarkerButton:hover {
+		border-color: #eaaf0f;
+		border-width: 1px;
+		color:#eaaf0f;
+		background-color: #000000;
+		padding: 0px 2px 0px 2px;
+	}
+	#toggleDirectionMarkers {
+		width: 12px;
+		height: 20px;
+		padding: 1px;
+	}
+	#closeWalkingDirectionsPanelButton {
+		background-color: #000000;
+		margin-left: 5px;
+		border: #000000 solid 1px;
+		padding: 1px;
+	}
+	#closeWalkingDirectionsPanelButton:hover {
+		border-color: #eaaf0f;
+		border-width: 1px;
+		color:#eaaf0f;
+		background-color: #000000;
+	}
+	#closeWalkingPanelImage {
+		width: 20px;
+		height: 20px;
+	}
+	#walkingStepsContainer {
+		color: white;
+	}
+	#walkingStepsContainer p {
+		margin: 0px 0px 0px 10px;
+		padding: 2px;
+	}			
+
+
+	/*WALKING DIRECTIONS STEPS STYLING FOLLOWING GOOGLE'S */
+	/*      STRICT CONVENTION - CHANGE WITH CAUTION!      */
+	.adp-warnbox {
+		display: none;
+	}
+	.adp { 
+		background-color: #000000; 
+		border: none; 
+		border-collapse: collapse; 
+	}			
+	.adp-text { 
+		color:#eaaf0f; 
+		margin: 0px; 
+		padding: 0px; 
+		border-collapse: collapse;
+	}						
+	.adp-placemark { 
+		border-color: #000000; 
+		border-collapse: collapse; 
+		margin: 0px; padding: 0px;
+	}			
+	.adp-placemark tr { 
+		background-color: #000000; 
+		border-color: #000000; 
+		border-collapse: collapse; 
+		margin: 0px; padding: 0px;
+	}			
+	.adp-placemark tr td { 
+		background-color: #000000; 
+		border-color: #000000;  
+		border-collapse: collapse; 
+		margin: 0px; 
+		padding: 0px;
+	}			
+	.adp-list { 
+		background-color: #000000; 
+	}
+	.adp-legal { 
+		background-color: #000000; 
+	}			
+	.adp-summary { 
+		background-color: #eaaf0f; 
+	}
+	.adp-directions { 
+		background-color: #000000; 
+		color: #ffffff;
+	}
+	.adp-substep { 
+		background-color: #000000; 
+		color: #ffffff; 
+	}			
+	.adp-stepicon { 
+		visibility: hidden; 
+	}
+	
+	
+	/*INFOWINDOWS STYLES*/
+	/*Info Window body's text*/
+	#infoWindowBodyContent {
+		margin: 0px;
+		margin-top: 10px;
+	}
+	/*Info window header's text*/
+	#infoWindowHeading {
+		padding-left: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin: 0px;
+		color: #eaaf0f;
+		background-color: black;
+	}
+	.infoWindowImages {
+		width: 200px;
+		height: 150px;
+		margin: 0px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		border: 2px #000000 solid;
+		float: left; 
+	}
+	
+	
+
+    /*WALKING DIRECTIONS STYLES*/
+    
+    #walkingSelectionsStartDropdownOption {
+        padding: 2px 0px 3px 0px;
+        margin: 3px 2px 3px 0px;
+        display: inline-block;
+    }
+    
+    #walkingDirectionsStartInput {
+        width: 275px;
+    }
+    
+    #walkingSelectionsEndDropdownOption {
+        padding: 2px 0px 3px 0px;
+        margin: 2px 2px 10px 0px;
+        display: inline-block;
+    }
+    
+    #walkingDirectionsEndInput {
+        width: 275px;
+    }
+    
+    #walkingSelectionsSubmitButton {
+        width: 160px;
+        height: 30px;
+        margin: 5px 30px 5px 30px;
+        padding-top: 7px;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: #eaaf0f;
+        border-color: #000000;
+    }
+    
+    #walkingSelectionsSubmitButton:hover {
+        border-color: #eaaf0f;
+        border-width: 2px;
+        color: #eaaf0f;
+        background-color: #000000;
+    }
+
+    /* Cursor------------------------------------------------  */
+    
+    .nav-item {
+        cursor: pointer;
+    }
+    
+    #d-tiger {
+        cursor: initial;
+        font-family: 'Anton', sans-serif;
+        font-size: 1.4rem;
+    }
+    /* Navbar------------------------------------------------ */
+    /* general */
+    
+    nav {
+        background-color: #eaaf0f;
+        font-family: 'Athiti', sans-serif;
+        text-align: left;
+    }
+    
+    nav img {
+        height: 30px;
+        width: 30px;
+    }
+    
+    nav .nav-item {
+        display: inline-block;
+        margin: 0 12px;
+        vertical-align: middle;
+    }
+    
+    nav button {
+        background: #eaaf0f;
+    }
+    
+    nav ul {
+        display: block;
+        width: auto;
+        margin-left: 10px;
+    }
+    
+    nav .btn {
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav .filter {
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+    }
+    /* specific */
+    
+    @media (max-width:1200px) {
+        nav #top-navbar {
+            text-align: center;
+        }
+    }
+    
+    @media (max-width:425px) and (min-width:320px) {
+        #d-tiger {
+            font-size: 1rem;
+        }
+        nav img {
+            height: 20px;
+            width: 20px;
+        }
+        /* Sidebar position */
+        .sidebar {
+            top: 35px;
+            bottom: 41px;
+        }
+        #map {
+            top: 35px;
+            bottom: 41px;
+        }
+        #m-b-navbar .nav-item {
+            font-size: 0.8rem;
+        }
+        nav .nav-item {
+            display: inline-block;
+            margin: 0;
+            vertical-align: middle;
+        }
+    }
+    
+    @media (min-width:425px) and (max-width:1200px) {
+        /* Sidebar position */
+        .sidebar {
+            position: relative;
+            top: 44px;
+            bottom: 49px;
+        }
+        #map {
+            top: 35px;
+            bottom: 41px;
+        }
+        #headerSearchBarInput{
+
+        }
+    }
+    
+    @media (min-width:1200px) {
+        /* Sidebar position */
+        .sidebar {
+            top: 56.25px;
+            bottom: 0;
+        }
+        #map {
+            top: 44px;
+            bottom: 10px;
+        }
+    }
+    
+    @media (max-width: 319px) {
+        .sidebar,
+        .navbar {
+            display: none !important;
+        }
+    }
+    /* Mobile-------------------------------------------- */
+    
+    #m-b-navbar {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    #m-b-navbar .nav-item {
+        display: inline-block !important;
+    }
+    
+    #m-b-navbar .nav-item span {
+        display: block !important;
+        line-height: 1;
+    }
+    /* Sidebar------------------------------------------- */
+    
+    .sidebar {
+        background-color: rgba(0, 0, 0, 1);
+        color: ivory;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        position: absolute;
+        z-index: 20;
+        padding: 10px;
+    }
+    
+    .share-img {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .student-info,
+    .share {
+        display: none;
+    }
+    
+    .share-button {
+        display: inline;
+    }
+    /*     .twitter-share-button {
+        margin-top: 5px;
+    }
+     */
+    
+    .fhsu-version {
+        color: gray;
+    }
+    
+    @media (min-width:768px) {
+        .sidebar {
+            width: 330px;
+        }
+    }
+    
+    @media (max-width:768px) {
+        .sidebar {
+            width: 100%;
+        }
+    }
+    /* Nav menu vertical middle--------------------------------------- */
+    /* nav .navbar-nav {
+        position: relative;
+    }    
+    nav .navbar-nav .nav-item {
+        height: auto;
+        width: auto;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    } */
