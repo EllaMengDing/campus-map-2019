@@ -1,0 +1,36 @@
+{
+  "short_name": "FHSU Map",
+  "name": "FHSU Campus Map",
+  "icons": [
+  {
+      "src": "./assets/css/img/icon/64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "./assets/css/img/icon/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/css/img/icon/256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "./assets/css/img/icon/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "./assets/css/img/icon/1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "black",
+  "display": "standalone",
+  "description":"An app we want to work",
+  "theme_color": "#fdb913"
+}
