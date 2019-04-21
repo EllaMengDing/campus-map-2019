@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--*Add a < back to the beginning and put above doctype -  ?php require_once('mapPullFromDB.php'); ?>-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fort Hays State University Campus Map</title>
+    <link rel="icon" href="./assets/img/siteImages/tiger.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- These five 'meta' below is about facebook share  -->
+    <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="Fort Hays State University Campus Map" />
+    <meta property="og:title" content="Fort Hays State University Campus Map" />
+    <meta property="og:description" content="Fort Hays State University Campus Map" />
+    <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Anton|Athiti" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-4.1.3.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome-free-5.4.2-web-all.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="./assets/css/img/icon/64.png" sizes="64x64">
+    <link rel="apple-touch-icon" href="./assets/css/img/icon/128.png" sizes="128x128">
+    <link rel="apple-touch-icon" href="./assets/css/img/icon/194.png" sizes="194x194">
+    <link rel="apple-touch-icon" href="./assets/css/img/icon/256.png" sizes="256x256">
+    <link rel="apple-touch-icon" href="./assets/css/img/icon/512.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="./assets/css/img/icon/1024.png" sizes="1024x1024">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="./css/N-main.css" /> -->
+</head>
+
+<body>
+    <!-- facebook share button, this code must be here according Facebook Developer JavaScript SDK -->
+    <div id="fb-root"></div>
+    <!-- ---------------------------------Desk---------------------------- -->
+    <header>
+        <nav class="navbar navbar-expand-xs fixed-top" id="top-navbar">
+            <div class="navbar-brand d-none d-xl-block">
+                <a href="#" class="pull-left nav-sb-menu" style="padding:5px" data-label="hamburger"><i class="fa fa-bars fa-sm" aria-hidden="true"></i></a>
+                <div class="form-inline d-none d-sm-inline">
+                    <input id="headerSearchBarInput" class="form-control" type="text" placeholder="Search..." aria-label="Search" />
+                    <button id="searchButton" class="btn" type="button"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <ul class="navbar-nav mr-auto d-none d-xl-block">
+                <li class="nav-item nav-sb-menu" data-label="layers">
+                    <i class="fas fa-layer-group" aria-hidden="true"></i>
+                    <span class="js-text">Layers</span>
+                </li>
+                <li class="nav-item nav-sb-menu" data-label="building">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                    <span class="js-text">Buildings</span>
+                </li>
+                <li class="nav-item nav-sb-menu" data-label="parking">
+                    <i class="fas fa-car fa-lg" aria-hidden="true"></i>
+                    <span class="js-text">Parking Lots</span>
+                </li>
+                <li class="nav-item nav-sb-menu" data-label="direction">
+                    <i class="fas fa-route fa-lg" aria-hidden="true"></i>
+                    <span class="js-text">Walking Directions</span>
+                </li>
+                <li class="nav-item nav-sb-menu" data-label="tour">
+                    <i class="fas fa-walking fa-lg" aria-hidden="true"></i>
+                    <span class="js-text">Tour</span>
+                </li>
+            </ul>
+            <div class="nav-item float-right" id="d-tiger">
+                <img src="./assets/img/siteImages/tiger.png" alt="tiger">
+                <span class="js-text">Fort Hays State University Campus Map</span>
+            </div>
+            <div class="nav-item d-block d-xl-none float-right nav-sb-menu" data-label="hamburger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-------------------------- Sidebar --------------------------->
+    <div id="sidebar" class="sidebar">
+        <!-- the code below will use in "N-spa.js" -->
+        <div id="sidebar-hamburger" class="sidebar-content" style="display:none">
+            <h3>Main Menu</h3>
+               <div id="student-info">
+                <h5 class="sidebarOption" id="toggle-student-info" >Student Information</h5>             
+               </div>
+               <h5 id="currentLocation">Current Location</h5>
+                <table class="currentLocationInfo" style="display:none">
+                    <tr>
+                        <td style="color: #eaaf0f">Building Name:</td>
+                        <td id="current_building_name"></td>
+                    </tr>
+                <!--
+                    <tr>
+                        <td>Building Introduction:</td>
+                        <td id="current_building_info"></td>
+                    </tr>
+                -->
+                </table>
+          
+               <div><h5 class="sidebarOption" id="toggle-share">Share</h5>
+                   <div class="share">
+                         <!--Facebook share-->
+                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=small&mobile_iframe=true&width=88&height=20&appId" width="88" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                       <!--Twitter share -->
+                        <div class="">
+                            <a style="background-color:#000" class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>
+                        </div>
+                    </div>
+                </div> 
+                <div ><h5 class="sidebarOption" id="toggle-about">About</h5>
+                    <div class="about">
+                        <p style="color: #eaaf0f">Developers</p><p>Monica Michaud; Meng(Ella)Ding; Conner Chessmore; Peng(Oliver)Zhang; Yangyang Cui</p>
+                        <p style="color: #eaaf0f">Advisers:</p><p> Gordon Carlson, PhD; Nicholas Caporusso, PhD</p>
+                        <p style="color: #eaaf0f">Institutions</p><p>Institute for New Media Studies & Informatics Department</p> 
+                    </div>
+                </div>
+                <div><h5 class="sidebarOption" id="toggle-help">Help</h5>
+                    <div class="help"><h5>Contact the Institute for New Media Studies:</h5> 
+                        <p style="color: #eaaf0f">Location:</p><p> Malloy Hall 106</p>
+                        <p style="color: #eaaf0f">Email: </p><p>newmedia@fhsu.edu</p>
+                        <p style="color: #eaaf0f">Phone:</p><p> 785-628-4784</p>
+                    </div>
+                </div>
+
+                <div><h5 class="sidebarOption" id="toggle-version">Version</h5>
+                    <div id="informationCreditsDisplay" class="version" title="About the Next Dimension">     
+                        <p style="color: #eaaf0f"> 1.0 (April, 2019)</p>
+                    </div>
+                </div>
+                <br>
+        </div>
+        <!----------------------------- the code above will use in "N-spa.js" ---------------------->
+        <div id="sidebar-search" class="sidebar-content" style="display:none">
+            <div class="form-inline d-block d-xl-none">
+                <input id="headerSearchBarInput2" class="form-control" type="text" placeholder="Search..." aria-label="Search" />
+                <button id="searchButton2" class="btn" type="button"><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+            </div>Some content for search</div>
+        <div id="sidebar-layers" class="sidebar-content">Some content for layers</div>
+        <div id="sidebar-building" class="sidebar-content" style="display:none">Some content for buildings</div>
+        <div id="sidebar-direction" class="sidebar-content" style="display:none">
+		  <div id="walkingTitleBar"><div id="walkingTitleText" class="sameLineStyle">
+			<h3>Walking&nbsp;Directions</h3></div>
+			<div id="walkingResetButtonContainer" class="sameLineStyle">
+			     <button id="walkingResetButton" class="resetButtons" type="button" onClick="clearDirections()"><img src="./assets/img/siteImages/white-restart-512.png"></button>
+			</div>
+          </div>
+			<div id="walkingInstructionText">
+			 <span class="intructionTexts">Select buildings from dropdown menus</span>
+			</div>
+			<div id="walkingSelectionsContainer">
+    			<form id="walkingDropdownForm">
+        			<div id="walkingSelectionsStart">
+            			<div id="walkingSelectionsStartTitleText">
+            			     <h4 class="walkingDirectionsSelectionHeaders">Start:</h4>
+            			</div>
+            			<div id="walkingSelectionsStartDropdownOption">
+                			<select name="start" id="walkingDirectionsStartInput">
+                			     <option value="0"> Current position</option>
+                			</select>
+            			</div>
+        			</div>
+        			<div id="walkingSelectionsEnd">
+            			<div id="walkingSelectionsEndTitleText">
+            			     <h4 class="walkingDirectionsSelectionHeaders">End:</h4>
+            			</div>
+            			<div id="walkingSelectionsEndDropdownOption">
+                			<select name="end" id="walkingDirectionsEndInput">
+                			     <option value="0"> Current position</option>
+                			</select>
+            			</div>
+        			</div>
+        			<div id="walkingSelectionsSubmitButtonContainer">
+        			     <button id="walkingSelectionsSubmitButton" type="button" onClick="showWalkingDirections()">Get Directions</button>
+        			</div>
+    			</form>
+			</div>
+    		<div id="walkingDirectionsResultsContainer">
+    			<div id="walkingDirectionsPanelTitleTextContainer" class="sameLineStyle">
+    			     <h4 id="walkingDirectionsPanelTitleText">Steps:</h4>
+    			</div>
+    			<div class="sameLineStyle">
+    			     <button id="toggleWalkingDirectionsMarkerButton" type="button" onClick="toggleWalkingMarkers()"><img id="toggleDirectionMarkers" src="./assets/img/siteImages/google-map-pointer-grey-th.png"></button>
+    			</div>
+    			<div class="sameLineStyle">
+    			     <button id="closeWalkingDirectionsPanelButton" type="button"><img id="closeWalkingPanelImage" src="./assets/img/siteImages/close-button.png"></button>
+    			</div>
+    			 <div id="walkingStepsContainer">
+    			     <p>No walking results yet - Select above!</p>
+    			</div>
+			</div>
+		</div>
+        <div id="sidebar-parking" class="sidebar-content" style="display:none">Some content for parking</div>
+        <div id="sidebar-tour" class="sidebar-content" style="display:none">Some content for tours</div>
+    </div>
+    <!--Google map area -->
+    <div id="map"></div>
+    <!-- ----------------------------Mobile----------------------------------->
+    <footer>
+        <nav class="navbar d-block d-xl-none fixed-bottom">
+            <div class="navbar-nav d-flex flex-row justify-content-around" id="m-b-navbar">
+
+                <div class="nav-item nav-sb-menu d-flex justify-content-around" data-label="layers">
+                    <i class="fas fa-layer-group"></i>
+                    <span class="js-text">Layers</span>
+                </div>
+
+                <div class="nav-item nav-sb-menu d-flex justify-content-around" data-label="building">
+                    <i class="fa fa-building" aria-hidden="true"></i>
+                    <span class="js-text">Building</span>
+                </div>
+
+                <div class="nav-item nav-sb-menu d-flex justify-content-around" data-label="parking">
+                    <i class="fas fa-car fa-lg"></i>
+                    <span class="js-text">Parking</span>
+                </div>
+
+                <div class="nav-item nav-sb-menu d-flex justify-content-around" data-label="direction">
+                    <i class="fas fa-route fa-lg"></i>
+                    <span class="js-text">Direction</span>
+                </div>
+
+                <div class="nav-item nav-sb-menu d-flex justify-content-around" data-label="tour">
+                    <i class="fas fa-walking fa-lg"></i>
+                    <span class="js-text">Tour</span>
+                </div>
+
+                <div class="nav-item nav-sb-menu d-flex justify-content-around" data-label="search">
+                    <i class="fas fa-search"></i>
+                    <span class="js-text">Search</span>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Current Location Introduction</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="currentLocationTitle"></h3>
+                    <p class="currentLocationContent"></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="checkbox" name="close-popup-info" value="none" class="float-left" id="check-click" />Don't show this in this building
+                    <br/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="js/mustache.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/drawings.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMYzAk4QMdMjpWb7ecr5ImwRaV8xp1sDw"></script>
+    <script src="./js/N-spa.js"></script>  
+    <script src="./js/directions.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/serviceworker.js"></script>         
+ </body>
+</html>
