@@ -386,6 +386,13 @@
             margin: 0;
             vertical-align: middle;
         }
+	 .infoWindowImages {
+            width: 100px;
+            height: 75px;
+            margin: 0px;
+            border: 1px #000000 solid;
+
+        }
     }
     
     @media (min-width:425px) and (max-width:1200px) {
