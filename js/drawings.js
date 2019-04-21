@@ -114,7 +114,7 @@ function initMap() {
         currentPosition = myLatlng;  
         if(marker == null){
              var iconImage = new google.maps.MarkerImage('./assets/img/siteImages/icon49.png',       
-                 new google.maps.Size(25, 25),//This marker is 28 pixels wide by 25 pixels high.
+                 new google.maps.Size(48, 48),//This marker is 28 pixels wide by 25 pixels high.
              );
             marker = new google.maps.Marker({
                 position: myLatlng,
