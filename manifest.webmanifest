@@ -8,7 +8,7 @@
       "sizes": "64x64"
     },
     {
-      "src": "./assets/css/img/icon/193.png",
+      "src":"./assets/css/img/icon/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
