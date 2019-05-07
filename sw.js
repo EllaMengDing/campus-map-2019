@@ -6,12 +6,12 @@ const urlsToCache = [
   './js/N-spa.js',
   './js/directions.js',
   './js/map.js',
-  './assets/css/img/icon/64.png',
-  './assets/css/img/icon/128.png',
-
-  './assets/css/img/icon/256.png',
-  './assets/css/img/icon/512.png',
-  './assets/css/img/icon/1024.png'
+  './assets/img/icon/64.png',
+  './assets/img/icon/128.png',
+  './assets/img/icon/192.png',
+  './assets/img/icon/256.png',
+  './assets/img/icon/512.png',
+  './assets/img/icon/1024.png'
 ];
 
 self.addEventListener('install', function(event) {
