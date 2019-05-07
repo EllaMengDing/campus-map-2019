@@ -8,7 +8,7 @@ const urlsToCache = [
   './js/map.js',
   './assets/css/img/icon/64.png',
   './assets/css/img/icon/128.png',
-  './assets/css/img/icon/192.png',
+
   './assets/css/img/icon/256.png',
   './assets/css/img/icon/512.png',
   './assets/css/img/icon/1024.png'
